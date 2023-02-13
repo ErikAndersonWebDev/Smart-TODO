@@ -43,7 +43,7 @@ module.exports = (db) => {
   });
 
   // Update user route
-  router.put("/update", (req, res) => {
+  router.post("/update", (req, res) => {
     const userID = req.session.user_id;
     const obj = req.body;
     if (obj.password) {
