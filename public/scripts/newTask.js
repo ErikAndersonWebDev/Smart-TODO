@@ -3,13 +3,15 @@ $(document).ready(function() {
 
   const createTaskElement = function(task) {
 
-    const categoryFromApi = () => {
-      return new Promise(task).then(res => { return res.category; });
-    };
+    // const categoryFromApi = () => {
+    //   return new Promise(task).then(res => { return res.category; });
+    // };
+    const category = task.category;
+    const task = task.task;
 
     const $task = $(`
             <article id="taskArticle">
-            <lable>${categoryFromApi}: ${$taskCommand}</lable>
+            <lable>${category}: ${task}</lable>
             <i id="star" class="fa-regular fa-star"></i>
             <i id="flag" class="fa-regular fa-flag"></i>
             <i id="delete" class="fa-regular fa-circle-xmark"></i>
@@ -19,7 +21,7 @@ $(document).ready(function() {
     let categoryMap = { watch: "#45c4b0", read: '#ca06ec', eat: '#7c001d', buy: '#0109ea' };
 
     for (let key in categoryMap) {
-      if (categoryFromApi.includes(key)) {
+      if (category.includes(key)) {
         $task.css('border-left', `solid 10px ${categoryMap[key]}`);
       }
     }
