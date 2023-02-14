@@ -17,8 +17,43 @@
   <script defer src="/scripts/app.js"></script>
 </head>
 
+<<<<<<< Updated upstream
 <body>
   <h1>Have fun! 🥔</h1>
 </body>
 
 </html>
+=======
+      <div class="contents">
+        <div>
+          <h3 id="pushPlus">Press + To add a new task</h3>
+        </div>
+        <div class="taskDiv">
+          <form class="taskForm" action="/submit" method="POST">
+            <label for="newTask">New Task :</label>
+            <textarea id="newTask" type="text" name="newTask"></textarea>
+            <br />
+            <button type="submit" class="submit">add</button>
+          </form>
+        </div>
+
+        <section id="taskSection">
+          <article id="taskArticle">
+            <lable>the name of the task</lable>
+            <i id="star" class="fa-regular fa-star"></i>
+            <i id="flag" class="fa-regular fa-flag"></i>
+            <i id="delete" class="fa-regular fa-circle-xmark"></i>
+            <i id="folder" class="fa-regular fa-folder"></i>
+          </article>
+          <div id="myDropdown" class="dropdown-content">
+            <span id="watch">To Watch</span>
+            <span id="read">To Eat</span>
+            <span id="eat">To Read</span>
+            <span id="buy">To Buy</span>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
+>>>>>>> Stashed changes
