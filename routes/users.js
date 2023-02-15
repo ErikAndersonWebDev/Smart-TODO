@@ -12,8 +12,6 @@ const router = express.Router();
 //   res.render('users');
 // });
 
-
-
 const login = function(email, password) {
   return database.getUserWithEmail(email)
     .then(user => {

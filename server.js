@@ -39,9 +39,6 @@ app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
 
-const taskRoutes = require("./routes/tasks");
-app.use('/tasks', taskRoutes);
-
 // Note: mount other resources here, using the same pattern above
 
 // Home page
