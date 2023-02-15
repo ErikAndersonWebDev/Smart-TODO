@@ -1,30 +1,28 @@
-
+const db_queries = require('../../db/queries/tasks.js');
 $(document).ready(function() {
+
+
 
   const createTaskElement = function(task) {
 
-    // const categoryFromApi = () => {
-    //   return new Promise(task).then(res => { return res.category; });
-    // };
     const category = task.category;
     const task = task.task;
 
+    // let categoryMap = { watch: "#45c4b0", read: '#ca06ec', eat: '#7c001d', buy: '#0109ea' };
+
+    // for (let key in categoryMap) {
+    //   if (category.includes(key)) {
+    //     $task.css('border-left', `solid 10px ${categoryMap[key]}`);
+    //   }
+    // }
     const $task = $(`
-            <article id="taskArticle">
+            <article class="${category}" id="taskArticle">
             <lable>${category}: ${task}</lable>
             <i id="star" class="fa-regular fa-star"></i>
-            <i id="flag" class="fa-regular fa-flag"></i>
             <i id="delete" class="fa-regular fa-circle-xmark"></i>
             <i id="folder" class="fa-regular fa-folder"></i>
-          </article>`);
+            </article>`);
 
-    let categoryMap = { watch: "#45c4b0", read: '#ca06ec', eat: '#7c001d', buy: '#0109ea' };
-
-    for (let key in categoryMap) {
-      if (category.includes(key)) {
-        $task.css('border-left', `solid 10px ${categoryMap[key]}`);
-      }
-    }
     return $task;
 
   };
@@ -47,28 +45,26 @@ $(document).ready(function() {
 
     const serilizedData = $(this).serialize();
     $.ajax("/tasks", { method: "POST", data: serilizedData }).then(() => {
-      reset();
+      $("#newTask").empty();
       loadTasks();
     });
 
   });
 
+  //send a get request to backend with the name of "/tasks"
+  const loadTasks = () => {
+    const arrayOfUserTasks = db_queries.getAllUserTasks();
+
+    renderTasks(arrayOfUserTasks);
+
+  };
   //To render a new task and append it to the end of tasks
   const renderTasks = function(arrayOfTaskObj) {
-    $("#newTask").empty();
     for (let item of arrayOfTaskObj) {
       const $task = createTaskElement(item);
       $("#taskSection").prepend($task);
     }
   };
-
-  //send a get request to backend with the name of "/tasks"
-  const loadTasks = () => {
-    $.get("/tasks").then((data) => {
-      renderTasks(data);
-    });
-  };
-
   loadTasks();
 
 });
