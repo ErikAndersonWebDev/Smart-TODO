@@ -19,10 +19,12 @@ let renderTasks = function(tasks) {
       .then(loadTasks) //function from client.js
       .fail(handleServerError)
   });
+
   $(".fa-folder").on("click", function (event) {
     event.preventDefault();
-    $(".dropdown-content").slideToggle("slow");
+    $(this).parent().siblings(".dropdown-content").slideToggle("slow")
   });
+
   $(".dropdown-element").on("click", function (event) {
     event.preventDefault();
 

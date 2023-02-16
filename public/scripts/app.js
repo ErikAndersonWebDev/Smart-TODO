@@ -25,14 +25,9 @@ $("#new-task-plus").on("click", () => {
   $(".taskForm").slideToggle(400);
 });
 
-// SLIDE TOGGLE FOR CHANGING CATEGORY (ON FOLDER ICON)
-$("#folder").on("click", () => {
-  $(".dropdown-content").slideToggle(400);
-});
-
 // IF CLICKED ON STAR ICON, CHANGE COLOR
-$("#star").on("click", () => {
-  $("#star").toggleClass("clicked");
+$(".fa-star").on("click", () => {
+  $(this).toggleClass("clicked");
 });
 
 // SLIDE TOGGLE FOR NEW TASK FORM
@@ -62,4 +57,4 @@ $(".sub").on("submit", () => {
   $(".update").hide();
 });
 
-
+$("#delete").on("click", () => {});
