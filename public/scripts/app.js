@@ -62,4 +62,53 @@ $(".sub").on("submit", () => {
   $(".update").hide();
 });
 
-$("#delete").on("click", () => {});
+$("#delete").on("click", () => {
+  $.ajax({
+    url: "/delete/:id",
+    type: "POST",
+  });
+});
+
+$("#watch").on("click", () => {
+  $.ajax({
+    url: "/change:id",
+    type: "POST",
+    data: `{
+      "userId": "${req.session.userID}",
+      "category": "watch",
+    }`,
+  });
+});
+
+$("#eat").on("click", () => {
+  $.ajax({
+    url: "/change:id",
+    type: "POST",
+    data: `{
+      "userId": "${req.session.userID}",
+      "category": "eat",
+    }`,
+  });
+});
+
+$("#read").on("click", () => {
+  $.ajax({
+    url: "/change:id",
+    type: "POST",
+    data: `{
+      "userId": "${req.session.userID}",
+      "category": "read",
+    }`,
+  });
+});
+
+$("#buy").on("click", () => {
+  $.ajax({
+    url: "/change:id",
+    type: "POST",
+    data: `{
+      "userId": "${req.session.userID}",
+      "category": "buy",
+    }`,
+  });
+});
