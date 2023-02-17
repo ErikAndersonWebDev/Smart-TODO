@@ -31,7 +31,8 @@ header i {
   position: fixed;
 }
 .navBar {
-  justify-self: end;
+  margin-left: 40px;
+  justify-items: flex-end;
   grid-area: 1/4/2/5;
   width: 82%;
   font-weight: 200;
@@ -295,7 +296,7 @@ article i:hover {
   display: flex;
   flex-direction: column;
   justify-content: end;
-  margin-left: 50em;
+  margin-left: 65%;
   padding: 25px;
   gap: 20px;
   visibility: hidden;

@@ -1,5 +1,5 @@
 ## Smart ToDo App
-=========
+
 Welcome to Smart ToDo! This app allows users to input the name of an item and it categorizes it into one of five groups:
 - To Watch
 - To Eat
@@ -16,7 +16,7 @@ Users first must register and login at the welcome page. Once logged in, users w
   - username: `labber` 
   - password: `labber` 
   - database: `midterm`
-  - GOOGLE_KEY: ` ` (for API searches)
+  - GOOGLE_KEY: ` ` (for API searches) `FILL IN A VALID GOOGLE KEY BEFORE CONTINUING`
 3. Install dependencies: `npm i`
 4. Fix to binaries for sass: `npm rebuild node-sass`
 5. Reset database: `npm run db:reset`
